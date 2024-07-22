@@ -16,10 +16,7 @@ class AIChatbot:
         if kwargs:
             payload.update(kwargs)
         
-        response = requests.post(
-            url=self.endpoint,
-            json=payload
-        )
+        response = requests.post(url=self.endpoint, json=payload)
 
         if stream:
             response_text = []
@@ -30,3 +27,10 @@ class AIChatbot:
             return response_json
         else:
             return response.json()
+        
+    def health_check(self):
+
+        payload = {"model": self.model}
+        response = requests.post(url=self.endpoint, json=payload)
+        return response.status_code
+    
