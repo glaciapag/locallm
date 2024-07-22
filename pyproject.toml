@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "locallm"
+version = "0.1.0"
+description = ""
+authors = ["glaciapag <glenn.laciapag@gmail.com>"]
+readme = "README.md"
+packages = [{include = "locallm", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.32.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
