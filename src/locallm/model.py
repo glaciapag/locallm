@@ -1,12 +1,12 @@
 import requests
 import json
-from .config import DefaultConfig
+from .config import DefaultModelConfig
 
 
 class AIChatbot:
 
-    def __init__(self, config = None):
-        self._config = config if config else DefaultConfig 
+    def __init__(self, config=None):
+        self._config = config if config else DefaultModelConfig 
         self.endpoint = self._config.endpoint
         self.model = self._config.model
         

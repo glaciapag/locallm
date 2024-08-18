@@ -1,6 +1,6 @@
 import unittest
 from locallm import AIChatbot
-from locallm.config import DefaultConfig
+from locallm.config import DefaultModelConfig
 
 class TestModel(unittest.TestCase):
     
