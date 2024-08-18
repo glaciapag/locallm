@@ -1,6 +1,6 @@
 import unittest
 from locallm import AIChatbot
-from locallm.config import DefaultConfig
+from locallm.config import DefaultModelConfig
 
 class TestOllama(unittest.TestCase):
     
@@ -20,7 +20,7 @@ class TestOllama(unittest.TestCase):
 
     def test_ollama_custom_config(self):
         """Tests the custom configuration"""
-        class CustomConfig(DefaultConfig):
+        class CustomConfig(DefaultModelConfig):
             model = "custom_model"
             endpoint = "http://customendpoint::8000"
         

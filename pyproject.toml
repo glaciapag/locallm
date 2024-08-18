@@ -9,6 +9,7 @@ packages = [{include = "locallm", from = "src"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 requests = "^2.32.3"
+chromadb = "^0.5.5"
 
 
 [build-system]
