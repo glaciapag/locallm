@@ -79,6 +79,22 @@ print(answer)
 {'model': 'llama3', 'created_at': '2024-07-22T10:49:11.274119Z', 'response': 'The capital of the Philippines is Manila.', 'done': True, 'done_reason': 'stop', 'context': [128006, 882, 128007, 271, 3923, 374, 279, 6864, 315, 26363, 128009, 128006, 78191, 128007, 271, 791, 6864, 315, 279, 26363, 374, 57664, 13], 'total_duration': 9569433512, 'load_duration': 7126954944, 'prompt_eval_count': 16, 'prompt_eval_duration': 1128135000, 'eval_count': 9, 'eval_duration': 1312084000}
 ```
 
+### Simple RAG
+
+```python
+from locallm import AIChatbot
+
+data = ["The weather today is cloudy", "It will probably rain in about an hour", "Tomorrow is probably going to be the same"]
+
+ai = AIChatbot()
+res = ai.ask("What is today's weather", documents=data)
+print(res)
+```
+
+```bash
+{'model': 'llama3', 'created_at': '2024-08-26T07:24:35.311199171Z', 'response': 'According to the given data, today\'s weather is "cloudy".', 'done': True, 'done_reason': 'stop', 'context': [128006, 882, 128007, 271, 985, 420, 828, 25, 32927, 91273, 374, 4762, 2133, 311, 387, 279, 1890, 518, 364, 2181, 690, 4762, 11422, 304, 922, 459, 6596, 518, 364, 791, 9282, 3432, 374, 74649, 75830, 4320, 279, 2768, 3488, 25, 3639, 374, 3432, 596, 9282, 128009, 128006, 78191, 128007, 271, 11439, 311, 279, 2728, 828, 11, 3432, 596, 9282, 374, 330, 12641, 88, 3343], 'total_duration': 16961778569, 'load_duration': 536604822, 'prompt_eval_count': 51, 'prompt_eval_duration': 6899317000, 'eval_count': 15, 'eval_duration': 9452099000}
+```
+
 ### Changing the runtime model
 
 ```python
